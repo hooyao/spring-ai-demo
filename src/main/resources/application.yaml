@@ -1,0 +1,27 @@
+spring:
+    application:
+        name: CodeTranslator
+    ai:
+        azure:
+            openai:
+                api-key: some-key
+                endpoint: https://your-endpoint.openai.azure.com/
+                chat:
+                    options:
+                        deployment-name: gpt-35-turbo-16k
+                        temperature: 0.1
+                        max-tokens: 4000
+        openai:
+            chat:
+                api-key: some-key
+                options:
+                    temperature: 0.1
+                    max-tokens: 4000
+
+        retry:
+            backoff:
+                initial-interval: 1000
+                multiplier: 2
+                max-interval: 10000
+            max-attempts: 3
+            on-client-errors: false
